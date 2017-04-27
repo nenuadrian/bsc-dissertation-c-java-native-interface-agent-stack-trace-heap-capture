@@ -1,0 +1,10 @@
+document_errors/**
+logs/**
+cgi-bin/**
+private/**
+stats/**
+public_shtml/**
+fuel/app/tmp/**
+fuel/app/logs/*
+fuel/vendor
+fuel/app/config/config.php

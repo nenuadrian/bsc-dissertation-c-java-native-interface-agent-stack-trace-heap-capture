@@ -1,0 +1,91 @@
+body {
+	padding-top: 150px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+a {
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+}
+
+.navbar-brand {
+	    padding: 5px;
+    width: 58px;
+}
+
+input[type="file"] {
+	display:inline-block;
+	margin:10px;
+}
+footer {
+	margin-top: 50px;
+	background-color: #2b2b2b;
+	padding-top: 50px;
+	padding-bottom: 20px;
+	color: white;
+}
+
+footer a {
+	color: white;
+}
+
+footer a:hover {
+	color: white;
+}
+
+footer .social-icon {
+	margin-left: 35px;
+	font-size: 30px;
+	color: white;
+}
+
+footer h5 {
+	color: white;
+}
+
+
+
+.navbar-default {
+	  background-color: #292929;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: #009344!important;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+	color: white;
+	letter-spacing: 1px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background-color:white;
+	color: rgb(0, 173, 232);
+}
+
+.navbar-nav .open .dropdown-menu {
+	background-color: white;
+}
+
+
+.modal-header {
+	    background-color: #efefef;
+    border-bottom: 1px solid #dddddd;
+	text-align: center;
+}
+
+
+.page {
+	min-height: 700px;
+}
