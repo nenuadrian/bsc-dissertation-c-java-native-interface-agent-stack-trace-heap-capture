@@ -1,0 +1,71 @@
+\section{Introduction}
+
+\subsection{Overview}
+
+The aim of this project is to build a JVM debugging tool able to detect errors and capture snapshots of the state of the system with minimal performance impact, with the potential of running even on production systems without compromises on stability or resource usage.
+
+The Java Native Interface a and JVM Tool Interface, providing low-level entry and event capturing points into the state of the Java Virtual Machine, are used to read the heap and extract useful data that can help developers construct a context-aware picture of the situation at the time at which errors have taken place.
+
+The main part of the tool is represented by a library to which this report refers to as the agent, that can latch itself to any JVM at start-time or run-time and accomplish the desired behaviour of capturing a slice of the values of variables when an exception takes place.
+
+Concerns such as secure storage of data and code-base code, which could be used to overlay captured variable data on, are explored. 
+
+One of the most challenging aspects has been communicating with the JVM using the previously mentioned interfaces. Many scenarios have had to be handled in order to parse the heap and recover all relevant data that might beof interest such as static and instance variables, objects referencing other objects, custom classes and others, all of which have brought their own complications.
+
+The cross-operating compilation aspect of a native library has also brought a certain level of complexity, for example the threading libraries and JDK package which are different for say UNIX and Windows systems.
+
+\subsection{Motivations}
+
+There is an uncountable amount of logging libraries and JVM heap monitors and dumpers, such as the well known tool jvisualvm which can be used to debug the JVM generally with a very noticeable impact on its performance \cite{jvisualvm}. However, specialised open-source tools for capturing only the objects of interest on a stack-trace, preferably built for speed and performance in order to enable usage in production systems are available only in a Platform as a service way.
+
+A number of industry representatives manifested interest in an open source tool to cover this need and emphasised the fact that similar providers hold their software under intellectual property license.
+
+\subsection{Aims}
+The main aim is building an open-source minimum viable product native agent which can accomplish the task of handling and capturing the values of variables from the JVM heap (object tree) when exceptions occur at runtime with minimal performance impact on the JVM. 
+
+A secondary aim is to provide a web dashboard for visualising and exploring the captured data through an user-friendly interface.
+
+And the final high-level aim is to research the different issues a system of this kind may face and their potential solutions even if they might be out of the scope of the project given the implementation time and resource constraints.
+
+\subsection{Context}
+This section presents general definitions of the the most important concepts used across this report. The reader who is familiar with these definitions may skip this part as it does not cover aspects specific to this project.
+
+\subsubsection{Java and the JVM}
+Since its initial introduction in 1995 \cite{javaPerfJVM}, the Java Virtual Machine, referred to henceforth as the JVM, has gained popularity up to the enterprise level. With a Just in time compiler, cross-operating-system running ability, a lot of attention to backward compatibility and memory management via the garbage collector, the JVM has brought about the introduction of other programming languages than Java as well, such as Scala and Clojure \cite{jvmLangs}. Apps developed in any such JVM based languages could be a potential client of the tool developed through in this project.
+
+Java (and other bytecode compatible languages) is transformed into bytecode which the JVM can run on any system able to run the JVM itself. The JVM takes care of memory management and many other performance and security aspects of the application. The Just In Time compiler (JIT) converts bytecode into machine dependable code (executable by the CPU) on a per-need basis, at run-time \cite{javaCompilerJVM}. This is what gives its main cross-operating-system and performance advantages. Moreover, the JVM offers very good interfaces for accessing its state at runtime which allows us to to build tools such as the one aimed by this project. Some of these interfaces are explored in the following subsections.
+
+\subsubsection{The Java Native Interface - JNI}
+The Java Native Interface, henceforth referred to as the JNI, allows code running inside of the JVM to interact with external libraries built in other programming languages. Agents using JNI calls can be created in languages such as C, C++ or even straight assembly \cite{javaPerfJVM}.
+
+The JNI could be used to alter the behaviour of applications, but this project mainly explores the observing capabilities it allows into the JVM state.
+
+\subsubsection{Exceptions and stack-traces}
+For the scope of this report, stack traces represent the sequence of stacked functions down to the point when an exception takes place. They allow us to track the execution path to the exception triggering block of code \cite{stacktrace}.
+
+The stack-trace is divided into multiple entries, in this case methods, called frames. 
+
+The end product of this project is meant to detect exceptions and, by going through each frame, capture the values of locally defined and statically available variables.
+
+\begin{listing}[H]
+\begin{minted}[breaklines=true]{c}
+Exception in thread "main" java.lang.NullPointerException
+        at com.demo.project.Book.getTitle(Book.java:15)
+        at com.demo.project.Author.getBookTitles(Author.java:30)
+        at com.demo.project.Bootstrap.main(Bootstrap.java:13)
+\end{minted}
+\caption{Example of a JVM stack-trace}
+\end{listing}
+
+\subsubsection{The JVM Tool Interface - JVMTI}
+The Java Virtual Machine Tool Interface, henceforth referred to as the JVMTI, can be used to monitor and debug a JVM \cite{jniwhatis}. It offers the ability to subscribe to a number of events out of which we are concerned with only one: jvmtiEventException \cite{jnievents}.
+
+Given an object, the JVMTI can be used to obtain its properties and fields.
+
+The JVMTI functions use JNI references to identify objects  (jobject and jclass) \cite{jniref}.
+
+The JVMTI and JNI are comprehensive tools for studying the behaviour of the JVM and once understood can be used to built useful debugging tools which can really ease the process of identifying the source of problems.
+
+
+\newpage
+

@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling}
+\usepackage{amssymb}
+\usepackage{geometry} 
+\geometry{a4paper}              
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage[table, svgnames]{xcolor} 
+\usepackage{array}
+\usepackage{cellspace}
+\usepackage{minted}
+
+\usepackage[
+backend=biber,
+sorting=ynt
+]{biblatex}
+\usepackage{etoolbox}
+
+\addbibresource{my.bib}
+\renewcommand*\contentsname{Table of Contents}
+
+ \AtBeginEnvironment{tabular}{\rowcolors{1}{\ifnumless{\rownum}{2}{DarkSeaGreen!40}{white}}{}}
+\renewcommand{\arraystretch}{2}
+
+ 
+\begin{document}
+
+\begin{center}
+    ~\\ 
+    ~\\ 
+
+    \includegraphics[width=10cm]{logom.png} 
+    ~\\ 
+    ~\\ 
+
+    ~\\ 
+    ~\\ 
+    ~\\ 
+    \Huge JVM stack-trace debugging in production systems \\
+    ~\\ 
+    ~\\ 
+        ~\\ 
+
+    \large Student\\ 
+    \Large Adrian M. Nenu\\  
+    ~\\    
+    ~\\ 
+
+    \large Supervisor\\  
+    \Large Dr. Caroline Jay
+    ~\\ 
+    ~\\    
+    ~\\ 
+    ~\\ 
+    ~\\ 
+
+    \large May 2017
+\end{center}
+
+\thispagestyle{empty}
+
+\newpage
+
+\begin{center} {\LARGE Abstract} \end{center}
+
+~\\
+~\\
+
+
+The Java Virtual Machine has become one of the most popular frameworks for running code in a cross-operating-system and performance-aware fashion, aspects of paramount importance in modern software.
+
+With the acknowledgement that no software, no matter how well planed and executed, is bug-less and the awareness that developers must expect even random errors which would be incredibly difficult to predict, perhaps errors specific to running an app in a distributed environment, programs are moving towards providing self-healing behaviours and interfaces which can ease the debugging effort, especially in production systems.
+
+One more aspect of modern software development is the advent of open-source communities. An individual software engineer can accomplish today what entire teams could execute in the same period of time in the past by taking advantage of the building blocks offered by the community at large and contributing back with his own changes and ideas. 
+
+In this report the techniques available to efficiently analyse the behaviour of the Java Virtual Machine and how debugging software can take advantage of them (even in production environments) are presented. A multiple-component system has been developed to allow the debugging of JVM based software in the following way:
+
+The focus point is being able to obtain a relevant slice of the state of the JVM at the time when an error occurs in the system. We will look upon an error as any exception which the JVM detects and capture the values of relevant variables used in the code inside the methods which are part of the stack-trace of these exceptions. This will provide us with a contextual approach to debugging, providing the ability to discover whether the issue at hand has developed due to an input or programming error.
+
+Many concerns have arisen with this approach, such as the recursive potential of objects in the JVM referencing each other, secure storage of captured data and avoiding recording the same exceptions across apps deployed in multiple instances, which we will discuss.
+
+The code is made available to the open-source community as interest has been manifested by enterprises for an openly licensed tool which they can customise to their own specific requirements without being under intellectual property regulations.
+
+\newpage
+
+\begin{center} {\LARGE Acknowledgements} \end{center}
+
+~\\
+~\\
+
+Firstly, I would like to thank my supervisor, Dr. Caroline Jay, for her continued support of the project and for always making sure it stayed on track regardless of my high-level goals which has allowed for the core to be developed first and then for other features to be built upon it.
+
+Secondly, I would like to thank the professors and professionals who have contributed their ideas and feedback in order to establish the requirements and need for such a project. 
+
+A thank you for the students who have helped evaluate and improve the ideas explored in this report is also in order.
+
+Last, but not least, I thank my parents for giving me the opportunities to reach my goals.
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\listoffigures
+
+
+\newpage
+
+\listoflistings
+
+
+\newpage
+
+\input{introduction.tex}
+
+\input{system-design-choices.tex}
+
+\input{implementation.tex}
+
+\input{testing-eval.tex}
+
+\input{conclusions.tex}
+
+
+
+\section{References}
+
+\printbibliography[title={~}]
+
+
+
+
+\end{document}
+

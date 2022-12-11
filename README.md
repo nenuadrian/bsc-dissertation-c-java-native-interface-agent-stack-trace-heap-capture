@@ -1,4 +1,4 @@
-# c-java-native-interface-agent-stack-trace-heap-capture
+# 3rd year Dissertation Project - University of Manchester
 
 The beginning of a C JNI Agent which can capture recursively the values of objects inside the methods on a stack-trace
 
