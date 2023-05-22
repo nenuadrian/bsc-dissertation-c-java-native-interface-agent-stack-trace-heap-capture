@@ -1,17 +1,15 @@
 # 3rd year Dissertation Project - University of Manchester
 
-The beginning of a C JNI Agent which can capture recursively the values of objects inside the methods on a stack-trace
+The commencement of a C JNI Agent, designed to recursively capture the values of objects within methods on a stack trace.
 
-To build the C part you need to install the libxml2 library and Jansson and crypto and openssl.
+To use, it is necessary to install the libxml2 library, as well as Jansson, crypto, and openssl.
 
-The resulting library files can be attached using the -agentpath in the java command.
+The resulting library files can be incorporated using the -agentpath flag in the java command.
 
-Communicates with an elementary Scala Spray server recording values in MongoDB (configure src/main/resources/application.conf from sample, build and run with sbt run)
+This agent interacts with a basic Scala Spray server, which records the captured values in MongoDB. To configure the server, modify the src/main/resources/application.conf file accordingly, then build and execute it using sbt run.
 
-Uses a FuelPHP dashboard which communicated with the Scala Spray Server to show results of analysis (do a composer install)
+Additionally, a FuelPHP dashboard is utilized, which communicates with the Scala Spray server to present the analysis results. Ensure you perform a composer install to set it up.
 
-No stable, not secure or optimised.
+It is important to note that this implementation is not stable, secure, or optimized, as it serves as a minimum viable product (MVP). However, you can extract relevant code snippets from it, particularly those demonstrating communication with the JNE.
 
-This is an MVP from which you could use code-bits for now, especially on how to communicate with the JNE.
-
-This was an university experimental project.
+Please bear in mind that this project was an experimental endeavor conducted at the university level.
