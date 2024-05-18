@@ -34,3 +34,4 @@ A FuelPHP dashboard is used to display the analysis results by communicating wit
 This implementation serves as a Minimum Viable Product (MVP). It is not stable, secure, or optimized. However, relevant code snippets, especially those demonstrating communication with the JNI, can be extracted and used.
 
 ## Disclaimer
+This was academic research and no guarantees or maintenance are provided.
