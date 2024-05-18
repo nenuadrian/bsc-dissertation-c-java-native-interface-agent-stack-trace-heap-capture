@@ -1,15 +1,36 @@
-# 3rd year Dissertation Project - University of Manchester
+# JNI Exception Capturing Agent for Production Debugging - BSc Dissertation Project - University of Manchester
 
-The commencement of a C JNI Agent, designed to recursively capture the values of objects within methods on a stack trace.
+## Overview
+This repository contains the implementation of a C JNI Agent designed to recursively capture the values of objects within methods on a stack trace.
 
-To use, it is necessary to install the libxml2 library, as well as Jansson, crypto, and openssl.
+## Prerequisites
+To utilize this agent, you need to install the following libraries:
+- `libxml2`
+- `Jansson`
+- `crypto`
+- `openssl`
 
-The resulting library files can be incorporated using the -agentpath flag in the java command.
+## Installation and Usage
+1. **Building the JNI Agent**:
+   Compile the JNI agent and generate the library files.
+   
+2. **Running with Java**:
+   Incorporate the resulting library files using the `-agentpath` flag in the Java command.
 
-This agent interacts with a basic Scala Spray server, which records the captured values in MongoDB. To configure the server, modify the src/main/resources/application.conf file accordingly, then build and execute it using sbt run.
+## Scala Spray Server Integration
+This agent interfaces with a basic Scala Spray server to record captured values in MongoDB.
 
-Additionally, a FuelPHP dashboard is utilized, which communicates with the Scala Spray server to present the analysis results. Ensure you perform a composer install to set it up.
+### Configuration
+- Modify the `src/main/resources/application.conf` file to configure the server settings.
+- Build and run the server using `sbt run`.
 
-It is important to note that this implementation is not stable, secure, or optimized, as it serves as a minimum viable product (MVP). However, you can extract relevant code snippets from it, particularly those demonstrating communication with the JNE.
+## FuelPHP Dashboard
+A FuelPHP dashboard is used to display the analysis results by communicating with the Scala Spray server.
 
-Please bear in mind that this project was an experimental endeavor conducted at the university level.
+### Setup
+- Perform `composer install` to set up the FuelPHP dashboard.
+
+## Note
+This implementation serves as a Minimum Viable Product (MVP). It is not stable, secure, or optimized. However, relevant code snippets, especially those demonstrating communication with the JNI, can be extracted and used.
+
+## Disclaimer
