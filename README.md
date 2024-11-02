@@ -1,5 +1,7 @@
 # JNI Exception Capturing Agent for Production Debugging - BSc Dissertation Project - University of Manchester
 
+[![CMake on a single platform](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml)
+
 ## Overview
 This repository contains the implementation of a C JNI Agent designed to recursively capture the values of objects within methods on a stack trace.
 
