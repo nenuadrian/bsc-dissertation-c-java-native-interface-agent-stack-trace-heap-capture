@@ -3,7 +3,7 @@
 #include <string.h>
 #include "common_data_structures.h"
 #include "xml_utils.h"
-#include <jansson.h>
+#include "jansson.h"
 
 extern char * API_KEY;
 extern pid_t PID;
