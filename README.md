@@ -6,7 +6,6 @@ This repository contains the implementation of a C JNI Agent designed to recursi
 ## Prerequisites
 To utilize this agent, you need to install the following libraries:
 - `libxml2`
-- `Jansson`
 - `crypto`
 - `openssl`
 
