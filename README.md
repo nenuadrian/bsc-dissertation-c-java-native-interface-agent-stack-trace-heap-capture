@@ -1,4 +1,4 @@
-# JNI Exception Capturing Agent for Production Debugging - BSc Dissertation Project - University of Manchester
+#  BSc Dissertation Project - University of Manchester - JNI Exception Capturing Agent for Production Debugging
 
 [![CMake on a single platform](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml)
 
