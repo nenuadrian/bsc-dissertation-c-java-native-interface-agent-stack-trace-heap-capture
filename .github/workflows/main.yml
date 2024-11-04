@@ -1,0 +1,35 @@
+name: LaTeX Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Install LaTeX and Biber
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full biber
+
+      - name: Ensure .bib file exists
+        run: |
+          if [ ! -f DISSERTATION/my.bib ]; then
+            echo "Error: DISSERTATION/my.bib file not found!"
+            exit 1
+          fi
+
+      - name: Compile LaTeX document with Biber
+        env:
+          BIBINPUTS: "./DISSERTATION:"  # Path to find .bib files
+          TEXINPUTS: "./DISSERTATION:"  # Path to find .tex files
+        run: |
+          cd DISSERTATION
+          latexmk -pdf -bibtex -shell-escape -synctex=1 -interaction=nonstopmode -f main.tex
