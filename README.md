@@ -1,4 +1,4 @@
-#  BSc Dissertation Project - University of Manchester - JNI Exception Capturing Agent for Production Debugging
+#  BSc Dissertation Project - University of Manchester - Non-intrusive JVM agents for capturing the internal state of live production applications
 
 [![CMake on a single platform](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml)
 [![LaTeX Build](https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/main.yml/badge.svg)](https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/main.yml)
@@ -37,3 +37,13 @@ This implementation serves as a Minimum Viable Product (MVP). It is not stable, 
 
 ## Disclaimer
 This was academic research and no guarantees or maintenance are provided.
+
+# Reference
+
+```
+@article{jniAgents,
+	author = {Adrian Nenu and Caroline Jay},
+	title = {{Non-intrusive JVM agents for capturing the internal state of live production applications}},
+	url = {[https://doi.org/10.3150/23-BEJ1663](https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture)}
+}
+```
