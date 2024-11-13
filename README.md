@@ -38,12 +38,13 @@ This implementation serves as a Minimum Viable Product (MVP). It is not stable, 
 ## Disclaimer
 This was academic research and no guarantees or maintenance are provided.
 
-# Reference
+# Cite
 
 ```
 @article{jniAgents,
 	author = {Adrian Nenu and Caroline Jay},
 	title = {{Non-intrusive JVM agents for capturing the internal state of live production applications}},
-	url = {[https://doi.org/10.3150/23-BEJ1663](https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture)}
+	url = {[https://doi.org/10.3150/23-BEJ1663](https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture)},
+	year = 2017
 }
 ```
