@@ -6,7 +6,7 @@
 ## Overview
 This repository contains the implementation of a C JNI Agent designed to recursively capture the values of objects within methods on a stack trace.
 
-![dashboard](DISSERTATION/dashboard-app.png)
+![design](DISSERTATION/end-design.png)
 
 ## Prerequisites
 To utilize this agent, you need to install the following libraries:
@@ -19,7 +19,7 @@ To utilize this agent, you need to install the following libraries:
    Compile the JNI agent and generate the library files.
    
 2. **Running with Java**:
-   Incorporate the resulting library files using the `-agentpath` flag in the Java command.
+   Incorporate the resulting library files using the Java command's `-agentpath` flag.
 
 ## Scala Spray Server Integration
 This agent interfaces with a basic Scala Spray server to record captured values in MongoDB.
@@ -29,16 +29,19 @@ This agent interfaces with a basic Scala Spray server to record captured values 
 - Build and run the server using `sbt run`.
 
 ## FuelPHP Dashboard
-A FuelPHP dashboard is used to display the analysis results by communicating with the Scala Spray server.
+
+![dashboard](DISSERTATION/dashboard-app.png)
+
+A FuelPHP dashboard displays the analysis results by communicating with the Scala Spray server.
 
 ### Setup
 - Perform `composer install` to set up the FuelPHP dashboard.
 
 ## Note
-This implementation serves as a Minimum Viable Product (MVP). It is not stable, secure, or optimized. However, relevant code snippets, especially those demonstrating communication with the JNI, can be extracted and used.
+This implementation serves as a Minimum Viable Product (MVP). It is not stable, secure, or optimized. However, relevant code snippets can be extracted and used, especially those demonstrating communication with the JNI.
 
 ## Disclaimer
-This was academic research and no guarantees or maintenance are provided.
+This was academic research, and no guarantees or maintenance are provided.
 
 # Cite
 
