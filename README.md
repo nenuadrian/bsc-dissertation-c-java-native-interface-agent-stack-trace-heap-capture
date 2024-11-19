@@ -6,8 +6,7 @@
 ## Overview
 This repository contains the implementation of a C JNI Agent designed to recursively capture the values of objects within methods on a stack trace.
 
-
-![dashboard](DISSERTATION/dashboard-app.png
+![dashboard](DISSERTATION/dashboard-app.png)
 
 ## Prerequisites
 To utilize this agent, you need to install the following libraries:
