@@ -8,3 +8,4 @@ fuel/app/tmp/**
 fuel/app/logs/*
 fuel/vendor
 fuel/app/config/config.php
+composer.lock
