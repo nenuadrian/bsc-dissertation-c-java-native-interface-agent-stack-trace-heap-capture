@@ -1,0 +1,34 @@
+site_name: BSc Dissertation - JVM Agent Stack Trace and Heap Capture
+site_description: Documentation for the dissertation repository and its project components.
+repo_url: https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture
+repo_name: nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Projects:
+      - Overview: projects/index.md
+      - C JVM Agent Library: projects/c-jvm-agent-lib.md
+      - Scala API: projects/scala-api.md
+      - FuelPHP Dashboard Portal: projects/fuelphp-dashboard-portal.md
+      - Scala API DB: projects/scala-api-db.md
+  - Dissertation PDF: dissertation.md

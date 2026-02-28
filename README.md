@@ -3,6 +3,16 @@
 [![CMake on a single platform](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/nenuadrian/c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/cmake-single-platform.yml)
 [![LaTeX Build](https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/main.yml/badge.svg)](https://github.com/nenuadrian/bsc-dissertation-c-java-native-interface-agent-stack-trace-heap-capture/actions/workflows/main.yml)
 
+## Table of Contents
+
+* [Overview](#overview)
+* [Key Features](#key-features)
+* [Technologies Used](#technologies-used)
+* [Installation and Usage](#installation-and-usage)
+* [Note](#note)
+* [Disclaimer](#disclaimer)
+* [Cite](#cite)
+
 ## Overview
 
 This project implements a non-intrusive JVM agent capable of capturing the internal state of live production applications. The agent is written in C and utilizes the Java Native Interface (JNI) to interact with the Java Virtual Machine (JVM). It recursively captures the values of objects within methods on a stack trace, providing valuable debugging information without impacting application performance. [cite: 23, 24, 25, 55, 56, 57]
